@@ -6,7 +6,7 @@ url: "http://yourdomain.com"
 baseurl: ""
 logo: Rémi-<b>SHARROCK</b>
 paginate: 5
-paginate_path: "/page:num/"
+paginate_path: "/blog/page:num/"
 owner:
     email: remi.sharrock@telecom-paristech.fr
     facebook:

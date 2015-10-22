@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Pain itself"
-date: 2015-10-10 00:49:37
+title: "Hehe 06 october"
+date: 2015-10-06 00:49:37
 categories: jekyll
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae cum dixisset paulumque institisset, Quid est? Immo videri fortasse. Quid iudicant sensus? Duo Reges: constructio interrete. A quibus propter discendi cupiditatem videmus ultimas terras esse peragratas. Non est ista, inquam, Piso, magna dissensio.

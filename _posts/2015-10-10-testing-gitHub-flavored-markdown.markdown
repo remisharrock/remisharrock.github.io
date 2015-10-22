@@ -4,8 +4,7 @@ title:  "Testing GitHub Flavored Markdown"
 date:   2015-10-10 19:37:30
 categories: jekyll
 ---
-Jekyll is simple but powerfull, and can hosted easely on github.
-This is cheat codes for creating beautiful article with GFM (Github Flavored Markdown).
+These are cheat codes for creating beautiful article with GFM (Github Flavored Markdown).
 For more information about GFM, [click here](https://help.github.com/articles/github-flavored-markdown/).
 
 ##### # Links
@@ -70,7 +69,7 @@ Example :
 
 ```
 function hello(){
-	return "Hello World!";	
+	return "Hello World!";
 }
 ```
 
@@ -79,7 +78,7 @@ Return :
 {% highlight text %}
 ```
 function hello(){
-	return "Hello World!";	
+	return "Hello World!";
 }
 ```
 {% endhighlight %}
@@ -104,7 +103,7 @@ Example :
 
 {% highlight javascript %}
 function hello(){
-	return "Hello World!";	
+	return "Hello World!";
 }
 {% endhighlight %}
 
@@ -114,7 +113,7 @@ Return :
 {%raw%}
 {% highlight javascript %}
 function hello(){
-	return "Hello World!";	
+	return "Hello World!";
 }
 {% endhighlight %}
 {%endraw%}
