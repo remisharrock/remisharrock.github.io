@@ -2,6 +2,7 @@
 layout: page
 title: This site
 permalink: /about/website/
+hidden: true
 ---
 ### Behind the scenes
 Here is some information about how I created my academic website [http://www.remisharrock.fr](http://www.remisharrock.fr)

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Me
+title: About me
 permalink: /about/me/
 ---
 
@@ -23,6 +23,10 @@ Feel free to contact me for research projects (consulting offers, job inquiries,
  ![][8]
 
   These are volcanic bubbles _boiling_ somewhere in the lost lands near Reykjavík. This shot was taken during my trip to Iceland in 2009.
+
+  <br>
+
+This website is made with <i class="fa fa-broken-heart"></i> [Reveal the mystery here](/about/website/) !
 
 [1]: http://www.telecom-paristech.fr
 [2]: http://en.wikipedia.org/wiki/Telecommunication#Etymology
