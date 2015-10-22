@@ -7,6 +7,7 @@
                 <li><a href="{{ page.url | prepend: site.baseurl }}" class="blue-text">{{ page.title }}</a></li>
             {% endif %}
         {% endfor %}
+        <li><a href="{{ "/blog/" | prepend: site.baseurl }}" class="blue-text">Blog</a></li>
         <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="blue-text">Feed</a></li>
     </ul>
     <div class="container container-large">
@@ -17,9 +18,10 @@
                 <li><a href="{{ page.url | prepend: site.baseurl }}" class="blue-text">{{ page.title }}</a></li>
             {% endif %}
         {% endfor %}
+        <li><a href="{{ "/blog/" | prepend: site.baseurl }}" class="blue-text">Blog</a></li>
         <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="blue-text">Feed</a></li>
     </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse right blue-text"><i class="material-icons">menu</i></a>
+    <a href="#" data-activates="slide-out" class="button-collapse right blue-text"><i class="fa fa-university fa-fw"></i></a>
     </div>
 </nav>
 </div>
