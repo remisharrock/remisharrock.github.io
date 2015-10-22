@@ -25,7 +25,7 @@ They are selling Top Level Domains (TLDs), not renting. It is another concept of
 It costs 200€ only once in your life and you get a root name for yourself, like ".whatyouwant". The pitfall is that everyone has to change its DNS servers manually to "open the roots" and access my website...
 
 #### Theming and icons
-This website tries to follow a little bit of [Google design guidelines](https://design.google.com/). More specifically, it uses [Google material design principles](https://www.google.com/design/spec/material-design/introduction.html) and its implementation by [Materializecss](http://materializecss.com/)
+This website tries to follow a little bit of [Google design guidelines](https://design.google.com/). More specifically, it uses [Google material design principles](https://www.google.com/design/spec/material-design/introduction.html) and its implementation by [Materializecss](http://materializecss.com/).
 
 Icons are from [FontAwesome](https://fortawesome.github.io/Font-Awesome/).
 
