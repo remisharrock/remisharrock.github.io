@@ -82,7 +82,7 @@ article {
           font-weight: 200;
       }
       li {
-        list-style-type: disc;    
+        list-style-type: disc;
       }
       &.on-index {
         padding:0;
@@ -100,4 +100,8 @@ footer.page-footer {
   font-size: 13px;
   line-height: 1.5;
   letter-spacing: -0.003em;
+ }
+
+ .tbb{
+   background: rgba(0, 0, 0, 0.20)
  }
