@@ -3,7 +3,7 @@ title: Jekyll-materialize
 description: > # this means to ignore newlines until "baseurl:"
     I'm a computer science associate professor. I teach and do research in Distributed Systems, Autonomic Computing and Networking Protocols.
 url: "http://www.remisharrock.fr"
-baseurl: ""
+baseurl: "/~sharrock"
 logo: Rémi-<b>SHARROCK</b>
 paginate: 5
 paginate_path: "/blog/page:num/"
