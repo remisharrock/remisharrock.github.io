@@ -1,3 +1,4 @@
+destination: "_siteENST"
 # Site settings
 title: Jekyll-materialize
 description: > # this means to ignore newlines until "baseurl:"
