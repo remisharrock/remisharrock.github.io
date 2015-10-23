@@ -11,12 +11,12 @@ For more information about GFM, [click here](https://help.github.com/articles/gi
 
 Example :
 
-[click here](https://github.com/riefachan).
+[click here](https://github.com/remisharrock).
 
-Return :
+GFM :
 
 ```
-[click here](https://github.com/riefachan)
+[click here](https://github.com/remisharrock)
 ```
 
 
@@ -26,7 +26,7 @@ Example :
 
 *this is italic !*
 
-Return :
+GFM :
 
 ```
 *this is italic !*
@@ -39,7 +39,7 @@ Example :
 
 **this is bold !**
 
-Return :
+GFM :
 
 ```
 **this is bold !**
@@ -54,7 +54,7 @@ Example :
 * Item 2
 * Item 3
 
-Return :
+GFM :
 
 ```
 * Item 1
@@ -69,16 +69,16 @@ Example :
 
 ```
 function hello(){
-	return "Hello World!";
+	GFM "Hello World!";
 }
 ```
 
-Return :
+GFM :
 
 {% highlight text %}
 ```
 function hello(){
-	return "Hello World!";
+	GFM "Hello World!";
 }
 ```
 {% endhighlight %}
@@ -90,7 +90,7 @@ Example :
 
 `echo "Hello World!";`
 
-Return :
+GFM :
 
 ````
 `echo "Hello World!";`
@@ -103,17 +103,17 @@ Example :
 
 {% highlight javascript %}
 function hello(){
-	return "Hello World!";
+	GFM "Hello World!";
 }
 {% endhighlight %}
 
-Return :
+GFM :
 
 {% highlight text %}
 {%raw%}
 {% highlight javascript %}
 function hello(){
-	return "Hello World!";
+	GFM "Hello World!";
 }
 {% endhighlight %}
 {%endraw%}
