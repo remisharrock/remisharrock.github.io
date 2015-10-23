@@ -24,7 +24,7 @@ Feel free to contact me for research projects (consulting offers, job inquiries,
    <div class="col s12 m10 l8">
      <div class="card hoverable">
        <div class="card-image">
-         <img src="/images/islande.jpg">
+         <img src="{{ "/images/islande.jpg" | prepend: site.baseurl }}">
          <span class="card-title white-text tbb">Reykjavík 2009</span>
        </div>
        <div class="card-content">
