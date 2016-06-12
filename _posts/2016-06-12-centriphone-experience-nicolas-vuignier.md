@@ -8,7 +8,7 @@ Cette vidéo utilise la technique du slomotion intégrée aux iPhones (mais pas 
 
 {% include youtubePlayer.html id="aqncOP7OzMg" %}
 
-Vous pouvez acheter le kit pour faire voler votre iPhone ici: [http://centriphone.me]
+Vous pouvez acheter le kit pour faire voler votre iPhone ici: [http://centriphone.me](http://centriphone.me)
 
 Voici le making of:
 
