@@ -21,7 +21,7 @@ hidden: false
 
 [Video/Screencast: Use the taskgrader tool basics](https://d381hmu4snvm3e.cloudfront.net/videos/zFKsysPezGAN/HD.mp4)
 
-[Change the output of the "hello world" program](https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/courseware/28248887f0fd4a3ebbfca97f0c2684ee/03788c3e71af40d093e67ea6602f57eb/)
+[Activity: Change the output of the "hello world" program](https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/courseware/28248887f0fd4a3ebbfca97f0c2684ee/03788c3e71af40d093e67ea6602f57eb/)
 
 [Video/Animation: Know the difference between hardware and software ; define program, algorithm, input/output, instructions](https://d381hmu4snvm3e.cloudfront.net/videos/6h1qgWqjpkKy/HD.mp4)
 
@@ -101,7 +101,7 @@ hidden: false
 
 [Activity: read an integer from the input and print the multiplication table of this input](https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/courseware/28248887f0fd4a3ebbfca97f0c2684ee/8d2009527ac2479faee925e3cea5ca3b/)
 
-[RCodecast: ead multiple integer inputs with scanf and a repetition loop](https://codecast.france-ioi.org/player?id=1465306068841)
+[Codecast: read multiple integer inputs with scanf and a repetition loop](https://codecast.france-ioi.org/player?id=1465306068841)
 
 [Activity: read multiple integers with a loop](https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/courseware/28248887f0fd4a3ebbfca97f0c2684ee/8d2009527ac2479faee925e3cea5ca3b/)
 
