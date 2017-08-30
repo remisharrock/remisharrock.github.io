@@ -1,7 +1,8 @@
 ---
 layout: page
-title: All resources for the introduction to C and Linux
+title: C and Linux resources
 permalink: /c/
+hidden: true
 ---
 
 [Global introduction video](https://d381hmu4snvm3e.cloudfront.net/videos/cQFNvZ6JGOSq/HD.mp4)
