@@ -2,7 +2,7 @@
 layout: page
 title: C and Linux resources
 permalink: /c/
-hidden: true
+hidden: false
 ---
 
 [Global introduction video](https://d381hmu4snvm3e.cloudfront.net/videos/cQFNvZ6JGOSq/HD.mp4)
