@@ -69,7 +69,7 @@ hidden: false
 
 [Activity: comment an existing code](https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/courseware/28248887f0fd4a3ebbfca97f0c2684ee/35304ea71c8546269ec0b6f744c9e8f5/)
 
-[Codecast: Print integer values]("https://codecast.france-ioi.org/player?id=1464859396430)
+[Codecast: Print integer values](https://codecast.france-ioi.org/player?id=1464859396430)
 
 [Codecast: Do simple math with integers](https://codecast.france-ioi.org/player?id=1464869103608)
 
