@@ -41,5 +41,4 @@ highlighter: rouge
 gems:
 - jekyll-feed
 - jemoji
-
 theme: jekyll-theme-cayman
