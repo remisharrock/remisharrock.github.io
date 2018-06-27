@@ -1,7 +1,7 @@
 ---
-layout: page
 title: Behind the scenes of this website
-permalink: /about/website/
+permalink: "/about/website/"
+layout: page
 hidden: true
 ---
 

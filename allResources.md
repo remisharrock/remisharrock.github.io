@@ -1,7 +1,7 @@
 ---
-layout: page
 title: C and Linux resources
-permalink: /c/
+permalink: "/c/"
+layout: page
 hidden: false
 ---
 

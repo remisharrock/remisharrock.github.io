@@ -1,7 +1,7 @@
 ---
-layout: page
 title: Ressources mooc Tunis
-permalink: /mooc/
+permalink: "/mooc/"
+layout: page
 hidden: true
 ---
 

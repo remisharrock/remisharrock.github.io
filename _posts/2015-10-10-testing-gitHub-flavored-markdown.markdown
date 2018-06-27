@@ -1,9 +1,11 @@
 ---
+title: Testing GitHub Flavored Markdown
+date: 2015-10-10 19:37:30 Z
+categories:
+- jekyll
 layout: post
-title:  "Testing GitHub Flavored Markdown"
-date:   2015-10-10 19:37:30
-categories: jekyll
 ---
+
 These are cheat codes for creating beautiful article with GFM (Github Flavored Markdown).
 For more information about GFM, [click here](https://help.github.com/articles/github-flavored-markdown/).
 

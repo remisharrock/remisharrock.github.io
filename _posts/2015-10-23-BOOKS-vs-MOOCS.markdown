@@ -1,8 +1,11 @@
 ---
+title: 'BOOKS vs MOOCS Mon détournement humoristique de l''article du huffington post
+  MOOC: Vers une colonisation de nos systèmes éducatifs? : saurez-vous trouver les
+  différences ?'
+date: 2015-10-23 01:35:37 Z
 layout: post
-title: "BOOKS vs MOOCS Mon détournement humoristique de l'article du huffington post MOOC: Vers une colonisation de nos systèmes éducatifs? : saurez-vous trouver les différences ?"
-date: 2015-10-23 01:35:37
 ---
+
 [Voici l'article original](http://www.huffingtonpost.fr/matthieu-cisel/mooc-vers-une-colonisation-systeme-education_b_4315060.html?utm_hp_ref=fr-techno) de Matthieu Cisel intitulé
 MOOC: Vers une colonisation de nos systèmes éducatifs?
 

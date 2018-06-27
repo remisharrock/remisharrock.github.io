@@ -1,7 +1,7 @@
 ---
-layout: page
 title: Contact
-permalink: /
+permalink: "/"
+layout: page
 ---
 
 * <i class="fa fa-phone fa-fw"></i> [+33 145 818 311](tel:+33145818311)<br>
