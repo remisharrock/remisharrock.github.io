@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.remisharrock.fr/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.remisharrock.fr/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.remisharrock.fr/post/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.remisharrock.fr/publication_types/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.remisharrock.fr/publication/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.remisharrock.fr/talk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.remisharrock.fr/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.remisharrock.fr/author/remi-sharrock/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.remisharrock.fr/tags/</loc>
+  </url>
+  
+</urlset>
