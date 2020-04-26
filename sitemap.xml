@@ -3,39 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.remisharrock.fr/authors/</loc>
+    <loc>https://remisharrock.fr/post/</loc>
+    <lastmod>2020-04-26T23:48:41+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.remisharrock.fr/categories/</loc>
+    <loc>https://remisharrock.fr/</loc>
+    <lastmod>2020-04-26T23:48:41+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.remisharrock.fr/post/</loc>
+    <loc>https://remisharrock.fr/post/starting-my-academic-page/</loc>
+    <lastmod>2020-04-26T23:48:41+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.remisharrock.fr/publication_types/</loc>
+    <loc>https://remisharrock.fr/authors/</loc>
   </url>
   
   <url>
-    <loc>https://www.remisharrock.fr/publication/</loc>
+    <loc>https://remisharrock.fr/categories/</loc>
   </url>
   
   <url>
-    <loc>https://www.remisharrock.fr/talk/</loc>
+    <loc>https://remisharrock.fr/publication_types/</loc>
   </url>
   
   <url>
-    <loc>https://www.remisharrock.fr/</loc>
+    <loc>https://remisharrock.fr/publication/</loc>
   </url>
   
   <url>
-    <loc>https://www.remisharrock.fr/author/remi-sharrock/</loc>
+    <loc>https://remisharrock.fr/talk/</loc>
   </url>
   
   <url>
-    <loc>https://www.remisharrock.fr/tags/</loc>
+    <loc>https://remisharrock.fr/author/remi-sharrock/</loc>
+  </url>
+  
+  <url>
+    <loc>https://remisharrock.fr/tags/</loc>
   </url>
   
 </urlset>

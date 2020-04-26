@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rémi SHARROCK | Remi Sharrock academic page</title>
-    <link>https://www.remisharrock.fr/author/remi-sharrock/</link>
-      <atom:link href="https://www.remisharrock.fr/author/remi-sharrock/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://remisharrock.fr/author/remi-sharrock/</link>
+      <atom:link href="https://remisharrock.fr/author/remi-sharrock/index.xml" rel="self" type="application/rss+xml" />
     <description>Rémi SHARROCK</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
-      <url>https://www.remisharrock.fr/author/remi-sharrock/avatar_hu31dc669bac3d1334037d28f9ba9c98d3_1302837_270x270_fill_q90_lanczos_center.jpg</url>
+      <url>https://remisharrock.fr/author/remi-sharrock/avatar_hu31dc669bac3d1334037d28f9ba9c98d3_1302837_270x270_fill_q90_lanczos_center.jpg</url>
       <title>Rémi SHARROCK</title>
-      <link>https://www.remisharrock.fr/author/remi-sharrock/</link>
+      <link>https://remisharrock.fr/author/remi-sharrock/</link>
     </image>
     
   </channel>
