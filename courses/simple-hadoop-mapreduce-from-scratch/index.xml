@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Remi Sharrock academic page</title>
-    <link>https://remisharrock.fr/</link>
-      <atom:link href="https://remisharrock.fr/index.xml" rel="self" type="application/rss+xml" />
-    <description>Remi Sharrock academic page</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 26 Apr 2020 23:48:41 +0200</lastBuildDate>
+    <title>Travaux pratiques - implémentation de Hadoop MapReduce &#34;from scratch&#34; en Java. | Remi Sharrock academic page</title>
+    <link>https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/</link>
+      <atom:link href="https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/index.xml" rel="self" type="application/rss+xml" />
+    <description>Travaux pratiques - implémentation de Hadoop MapReduce &#34;from scratch&#34; en Java.</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://remisharrock.fr/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Remi Sharrock academic page</title>
-      <link>https://remisharrock.fr/</link>
+      <title>Travaux pratiques - implémentation de Hadoop MapReduce &#34;from scratch&#34; en Java.</title>
+      <link>https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/</link>
     </image>
     
     <item>
@@ -599,34 +599,6 @@ S0.txt contient:&lt;/p&gt;
 &lt;p&gt;Améliorez la copie de votre projet pour qu&amp;rsquo;il fonctionne avec des plus gros fichiers en input.&lt;/p&gt;
 &lt;h3 id=&#34;une-prise-en-compte-des-pannes&#34;&gt;Une prise en compte des pannes&lt;/h3&gt;
 &lt;p&gt;De la même manière que précédemment, créez une copie de votre projet sur laquelle vous travaillez sur la robustesse: faites en sorte que votre programme fonctionne malgré des pannes inopinées de certaines machines. Pour tester, vous pouvez éteindre une ou plusieurs machines au milieu de calculs. Vous pouvez inventer d&amp;rsquo;autres pannes vous-même et présenter vos résultats. Comparez avec la méthode de robustesse utilisée par Google : &lt;a href=&#34;https://research.google.com/archive/mapreduce-osdi04.pdf&#34;&gt;https://research.google.com/archive/mapreduce-osdi04.pdf&lt;/a&gt; &lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Starting My (New) Academic Page</title>
-      <link>https://remisharrock.fr/post/starting-my-academic-page/</link>
-      <pubDate>Sun, 26 Apr 2020 23:48:41 +0200</pubDate>
-      <guid>https://remisharrock.fr/post/starting-my-academic-page/</guid>
-      <description>&lt;p&gt;So here is my first blog post switching from an old static website generator to a new one called 
-&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; and a theme called 
-&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;academic&lt;/a&gt;. I stated creating static sites in 2015 with a generator integrated to GitHub called 
-&lt;a href=&#34;https://jekyllrb.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jekyll&lt;/a&gt; and hosted (for free) using 
-&lt;a href=&#34;https://pages.github.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github pages&lt;/a&gt;. For the techies, you can see the move happened with 
-&lt;a href=&#34;https://github.com/remisharrock/remisharrock.github.io/commit/97acdd0eebb72325baca5ad5123df35d6170097c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this very commit&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I think my old website will still be accessible in the future using the 
-&lt;a href=&#34;http://web.archive.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;wayback machine&lt;/a&gt; to get some details on how it was previously built, maybe you can check (beware: as soon as you click the link, you will be travelling back in time!) by 
-&lt;a href=&#34;https://web.archive.org/web/20160409092644/http://www.remisharrock.fr/about/website/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clicking here&lt;/a&gt;. For those of you who are afraid to click, and that is understandable (you wouldn&amp;rsquo;t want to be lost in a parallel universe would you), you will notice a slight difference in the URL of the website. Indeed, I used HTTP and not HTTPS, remember that the S stands for Secured, what a crazy idea! As google wrote in a 
-&lt;a href=&#34;https://security.googleblog.com/2018/02/a-secure-web-is-here-to-stay.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;post&lt;/a&gt; back in 2018:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;For the past several years, we’ve moved toward a more secure web by strongly advocating that sites adopt HTTPS encryption. And within the last year, we’ve also helped users understand that HTTP sites are not secure by gradually marking a larger subset of HTTP pages as “not secure”. Beginning in July 2018 with the release of Chrome 68, Chrome will mark all HTTP sites as “not secure”.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Of course Google was right and I was surprised to discover that sites load slower using HTTP rather than HTTPS, even if you think the added encryption mechanism would slower things down: isn&amp;rsquo;t that counterintuitive ? Take a look 
-&lt;a href=&#34;https://scotthelme.co.uk/still-think-you-dont-need-https/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; to understand.&lt;/p&gt;
-&lt;p&gt;Looking back at my &amp;ldquo;behind the scenes of this website&amp;rdquo; I also mentioned 
-&lt;a href=&#34;atom.io&#34;&gt;ATOM&lt;/a&gt; to be my source code editor, which is not the case anymore. I switched to 
-&lt;a href=&#34;https://code.visualstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visual Studio Code&lt;/a&gt; and I&amp;rsquo;m very happy with it. Anyway the funny ATOM launching 
-&lt;a href=&#34;https://www.youtube.com/watch?v=Y7aEiVwBAdk&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;video&lt;/a&gt; is still on YouTube and I still like it a lot, especially when grandma switches the colors to black and green 👵 💻! No comparable video for Visual Studio Code 😏.&lt;/p&gt;
-&lt;p&gt;For the rest, I still use GitHub pages and I&amp;rsquo;ll explore more differences in a new post one day!&lt;/p&gt;
 </description>
     </item>
     

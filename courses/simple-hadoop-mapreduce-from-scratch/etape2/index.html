@@ -1,0 +1,994 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Rémi SHARROCK">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Travailler avec plusieurs ordinateurs en réseau. Prérequis et documentation   avoir un compte et pouvoir se connecter aux machines de l&rsquo;école (contacter la DSI de l&rsquo;école dans le cas contraire)">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/etape2/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/etape2/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@remisharrock">
+  <meta property="twitter:creator" content="@remisharrock">
+  
+  <meta property="og:site_name" content="Remi Sharrock academic page">
+  <meta property="og:url" content="https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/etape2/">
+  <meta property="og:title" content="Etape 2 | Remi Sharrock academic page">
+  <meta property="og:description" content="Travailler avec plusieurs ordinateurs en réseau. Prérequis et documentation   avoir un compte et pouvoir se connecter aux machines de l&rsquo;école (contacter la DSI de l&rsquo;école dans le cas contraire)"><meta property="og:image" content="https://remisharrock.fr/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://remisharrock.fr/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-05-05T00:00:00&#43;01:00">
+    
+    <meta property="article:modified_time" content="2019-05-05T00:00:00&#43;01:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Etape 2 | Remi Sharrock academic page</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Remi Sharrock academic page</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Remi Sharrock academic page</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/">Introduction</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape1/">Etape 1</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape2/">Etape 2</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape3/">Etape 3</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape4/">Etape 4</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape5/">Etape 5</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape6/">Etape 6</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape7/">Etape 7</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape8/">Etape 8</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape9/">Etape 9</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape10/">Etape 10</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape11/">Etape 11</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape12/">Etape 12</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape13/">Etape 13</a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#travailler-avec-plusieurs-ordinateurs-en-réseau">Travailler avec plusieurs ordinateurs en réseau.</a>
+      <ul>
+        <li><a href="#prérequis-et-documentation">Prérequis et documentation</a></li>
+        <li><a href="#nom-court-nom-long">Nom court, nom long</a></li>
+        <li><a href="#adresse-ip">Adresse ip</a></li>
+        <li><a href="#du-nom-vers-lip">Du nom vers l&rsquo;IP</a></li>
+        <li><a href="#de-lip-vers-le-nom">De l&rsquo;IP vers le nom</a></li>
+        <li><a href="#ping-pong-à-lintérieur">Ping pong à l&rsquo;intérieur!</a></li>
+        <li><a href="#ping-pong-à-lextérieur">Ping pong à l&rsquo;extérieur</a></li>
+        <li><a href="#calculer-en-ligne-de-commande-sur-lordinateur-local">Calculer en ligne de commande sur l&rsquo;ordinateur local</a></li>
+        <li><a href="#calculer-en-ligne-de-commande-sur-un-ordinateur-distant">Calculer en ligne de commande sur un ordinateur distant</a></li>
+        <li><a href="#calculer-à-distance-sans-mot-de-passe">Calculer à distance sans mot de passe</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Etape 2</h1>
+
+          <div class="article-style">
+            <h2 id="travailler-avec-plusieurs-ordinateurs-en-réseau">Travailler avec plusieurs ordinateurs en réseau.</h2>
+<h3 id="prérequis-et-documentation">Prérequis et documentation</h3>
+<ul>
+<li>
+<p>avoir un compte et pouvoir se connecter aux machines de l&rsquo;école (contacter la DSI de l&rsquo;école dans le cas contraire)</p>
+</li>
+<li>
+<p>lancer un interpréteur de commande (console linux , shell) pour taper des commandes:<br>
+
+<a href="https://fr.wikipedia.org/wiki/Interpr%C3%A9teur_de_commandes" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/Interpréteur_de_commandes</a><br>
+
+<a href="https://fr.wikipedia.org/wiki/Shell_Unix" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/Shell_Unix</a></p>
+</li>
+<li>
+<p>connaître quelques commandes de base sous Linux<br>
+<a href="https://fr.wikipedia.org/wiki/Commandes_Unix">https://fr.wikipedia.org/wiki/Commandes_Unix</a></p>
+</li>
+<li>
+<p><a href="https://prod-edx-mktg-edit.edx.org/course/linux-basics-the-command-line-interface">https://prod-edx-mktg-edit.edx.org/course/linux-basics-the-command-line-interface</a> </p>
+</li>
+<li>
+<p>savoir qu&rsquo;un ordinateur a un nom d&rsquo;hôte (hostname) et plusieurs adresses IP:<br>
+<a href="https://en.wikipedia.org/wiki/Hostname">https://en.wikipedia.org/wiki/Hostname</a><br>
+
+<a href="https://fr.wikipedia.org/wiki/Adresse_IP" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/Adresse_IP</a></p>
+</li>
+<li>
+<p>savoir qu&rsquo;un ordinateur peut faire partie d&rsquo;un domaine (comme à l&rsquo;école, le domaine enst.fr ou le domaine telecom-paristech.fr )<br>
+<a href="https://fr.wikipedia.org/wiki/Nom_de_domaine">https://fr.wikipedia.org/wiki/Nom_de_domaine</a></p>
+</li>
+<li>
+<p>savoir qu&rsquo;un nom peut être transformé en adresse IP (et inversement) par un serveur qui gère le système du nom de domaine (DNS, Domain Name System)<br>
+<a href="https://fr.wikipedia.org/wiki/Domain_Name_System">https://fr.wikipedia.org/wiki/Domain_Name_System</a></p>
+</li>
+<li>
+<p>se connecter à distance à un ordinateur avec SSH en ligne de commande<br>
+<a href="https://fr.wikipedia.org/wiki/Secure_Shell">https://fr.wikipedia.org/wiki/Secure_Shell</a><br>
+
+<a href="http://www.commentcamarche.net/faq/74-se-connecter-a-distance-avec-ssh-linux" target="_blank" rel="noopener">http://www.commentcamarche.net/faq/74-se-connecter-a-distance-avec-ssh-linux</a></p>
+</li>
+</ul>
+<h3 id="nom-court-nom-long">Nom court, nom long</h3>
+<p>Quel est le nom COURT de votre ordinateur (le nom simple sans le domaine) ?   quel est le nom LONG de votre ordinateur (le nom avec le domaine) ? Comment les connaître en ligne de commande ? Sur les ordinateurs de l&rsquo;école, est-il possible d&rsquo;obtenir ces noms autrement qu&rsquo;en ligne de commande ? Ajoutez les réponses à votre rapport.</p>
+<h3 id="adresse-ip">Adresse ip</h3>
+<p>Comment connaître les adresses (plusieurs) IP de votre ordinateur en ligne de commande ? Autrement (en passant par un site internet par exemple) ? Ajoutez les réponses à votre rapport.</p>
+<h3 id="du-nom-vers-lip">Du nom vers l&rsquo;IP</h3>
+<p>Comment à partir du nom d&rsquo;un ordinateur, obtenir les adresses IP en ligne de commande ? Ajoutez les réponses à votre rapport.</p>
+<h3 id="de-lip-vers-le-nom">De l&rsquo;IP vers le nom</h3>
+<p>Comment, à partir d&rsquo;une adresse IP, obtenir les noms associés en ligne de commande ? Ajoutez les réponses à votre rapport.</p>
+<h3 id="ping-pong-à-lintérieur">Ping pong à l&rsquo;intérieur!</h3>
+<p>Testez la communication avec d&rsquo;autres ordinateurs (pas le vôtre) depuis le réseau de l&rsquo;école en utilisant la commande ping (pour arrêter le ping faire CTRL + C). suivi du nom court, du nom long, de l&rsquo;IP. Les trois méthodes fonctionnent-elles ? Ajoutez les réponses à votre rapport.</p>
+<h3 id="ping-pong-à-lextérieur">Ping pong à l&rsquo;extérieur</h3>
+<p>Si vous effectuez le ping depuis un réseau différent, il est possible que celui ne fonctionne pas (filtrage des accès vers le réseau de l&rsquo;école depuis un réseau extérieur), contactez la DSI pour mettre en place une connection VPN / OpenVPN afin d&rsquo;être sur le même réseau que les machines en salle de TP.</p>
+<h3 id="calculer-en-ligne-de-commande-sur-lordinateur-local">Calculer en ligne de commande sur l&rsquo;ordinateur local</h3>
+<p>Comment lancer un calcul en ligne de commande sur votre ordinateur (par exemple 2 + 3) ? Parmi les multiples réponses possibles, lesquelles permettent de lancer le calcul et d&rsquo;obtenir le résultat en appuyant une seule fois sur la touche &lt;Entrée&gt; ? Ajoutez les réponses à votre rapport.</p>
+<h3 id="calculer-en-ligne-de-commande-sur-un-ordinateur-distant">Calculer en ligne de commande sur un ordinateur distant</h3>
+<p>Comment lancer un calcul  (par exemple 2 + 3) en ligne de commande sur un autre ordinateur (à distance) ? Il faudra certainement vous authentifier avec un mot de passe. Comment obtenir le résultat du calcul immédiatement après avoir tapé son mot de passe ? Ajoutez les réponses à votre rapport.</p>
+<h3 id="calculer-à-distance-sans-mot-de-passe">Calculer à distance sans mot de passe</h3>
+<p>Comment lancer un calcul à distance en utilisant SSH sans taper le mot de passe et en une seule ligne de commande (c&rsquo;est à dire qu&rsquo;on appuie sur &lt;Entrée&gt; et on a le résultat directement)?</p>
+<p>Attention: en utilisant vos ordinateurs personnels( a priori ce n&rsquo;est pas le cas sur les ordinateurs de l&rsquo;école), il faut parfois vérifier le &ldquo;fingerprint&rdquo; avec le message:</p>
+<p>The authenticity of host 'mint.phcomp.co.uk (78.32.209.33)' can't be established.<br>
+RSA key fingerprint is 6a🇩🇪e0:af:56:f8:0c:04:11:5b:ef:4d:49:ad:09:23.<br>
+Are you sure you want to continue connecting (yes/no)? yes</p>
+<p>Pour ne plus avoir à rentrer quoi que ce soit dans le terminal, il faut donc désactiver la vérification de ce &ldquo;fingerprint&rdquo;, sinon vous aurez l&rsquo;erreur </p>
+<p>Host key verification failed</p>
+<p>Suivez ce guide pour désactiver la vérification de &ldquo;fingerprint&rdquo;:</p>
+<p><a href="https://www.shellhacks.com/disable-ssh-host-key-checking/">https://www.shellhacks.com/disable-ssh-host-key-checking/</a></p>
+<p>De plus, si vous travaillez depuis votre ordinateur personnel, pour ne pas avoir à taper le mot de passe à chaque fois, il faut générer une clé privée et une clé publique SANS PASSPHRASE (ne pas mettre de mot de passe lors de la génération des clés) et installer la clé publique sur un ordinateur de l&rsquo;école, en copiant le contenu de la clé publique dans le fichier authorized_keys. Ce fichier authorized_keys est a placer dans le dossier .ssh (attention, il y a un point devant ssh &ldquo;.ssh&rdquo;), lui même situé dans votre dossier personnel sur les machines de l&rsquo;école. Pour cela, suivez un guide sur internet de création de clés publiques privées pour SSH. Attention, votre clé privée doit également être située dans le dossier .ssh de votre ordinateur personnel. La bonne configuration est donc: avoir une clé privée sur l&rsquo;ordinateur personnel dans le dossier .ssh de votre ordinateur personnel et avoir une clé publique sur un ordinateur de l&rsquo;école dans le dossier .ssh d&rsquo;un ordinateur de l&rsquo;école. Attention: sur Windows, il est parfois compliqué de créer le dossier .ssh. Sur Windows, il est également compliqué de générer des clés avec puttygen car le format des clés n&rsquo;est pas compatible avec openssh utilisé à l&rsquo;école. Puttygen a une option de conversion du format des clés (dans le menu conversions) pour convertir vers le fomat openssh. Le plus simple est de générer les clés sur une machine de l&rsquo;école puis de copier la clé privée sur votre ordinateur perso plutôt que de générer la clé sur votre ordi perso... Demandez de l&rsquo;aide à vos confrères experts en cas de pb. Ne restez pas coincé longtemps sur cette étape!</p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/simple-hadoop-mapreduce-from-scratch/etape1/" rel="next">Etape 1</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/courses/simple-hadoop-mapreduce-from-scratch/etape3/" rel="prev">Etape 3</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on 5 May 2019</p>
+
+          
+
+
+
+
+
+  
+  
+
+<p class="edit-page">
+  <a href="https://github.com/remisharrock/academic-kickstart/edit/dev/content/courses/simple-hadoop-mapreduce-from-scratch/etape2/index.md">
+    <i class="fas fa-pen pr-2"></i>Edit this page
+  </a>
+</p>
+
+
+
+
+          
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/c.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

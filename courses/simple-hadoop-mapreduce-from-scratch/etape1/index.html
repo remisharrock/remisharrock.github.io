@@ -1,0 +1,1008 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Rémi SHARROCK">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Faire un programme séquentiel non parallélisé qui compte le nombre d&#39;occurrences des mots dans un fichier. Prérequis et documentation   programmer en Java
+https://perso.telecom-paristech.fr/bellot/CoursJava/
+  manipuler l&rsquo;environnement de développement Eclipse">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/etape1/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/etape1/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@remisharrock">
+  <meta property="twitter:creator" content="@remisharrock">
+  
+  <meta property="og:site_name" content="Remi Sharrock academic page">
+  <meta property="og:url" content="https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/etape1/">
+  <meta property="og:title" content="Etape 1 | Remi Sharrock academic page">
+  <meta property="og:description" content="Faire un programme séquentiel non parallélisé qui compte le nombre d&#39;occurrences des mots dans un fichier. Prérequis et documentation   programmer en Java
+https://perso.telecom-paristech.fr/bellot/CoursJava/
+  manipuler l&rsquo;environnement de développement Eclipse"><meta property="og:image" content="https://remisharrock.fr/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://remisharrock.fr/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-05-05T00:00:00&#43;01:00">
+    
+    <meta property="article:modified_time" content="2019-05-05T00:00:00&#43;01:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Etape 1 | Remi Sharrock academic page</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Remi Sharrock academic page</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Remi Sharrock academic page</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/">Introduction</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape1/">Etape 1</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape2/">Etape 2</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape3/">Etape 3</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape4/">Etape 4</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape5/">Etape 5</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape6/">Etape 6</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape7/">Etape 7</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape8/">Etape 8</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape9/">Etape 9</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape10/">Etape 10</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape11/">Etape 11</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape12/">Etape 12</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/simple-hadoop-mapreduce-from-scratch/etape13/">Etape 13</a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#faire-un-programme-séquentiel-non-parallélisé-qui-compte-le-nombre-doccurrences-des-mots-dans-un-fichier">Faire un programme séquentiel non parallélisé qui compte le nombre d'occurrences des mots dans un fichier.</a>
+      <ul>
+        <li><a href="#prérequis-et-documentation">Prérequis et documentation</a></li>
+        <li><a href="#premier-comptage-en-séquentiel-pur">Premier comptage en séquentiel pur</a></li>
+        <li><a href="#premier-tri-en-séquentiel-pur">Premier tri en séquentiel pur</a></li>
+        <li><a href="#deuxième-tri-alphabétique-en-séquentiel-pur">Deuxième tri alphabétique en séquentiel pur</a></li>
+        <li><a href="#test-du-programme-séquentiel-sur-le-code-forestier-de-mayotte">Test du programme séquentiel sur le code forestier de Mayotte</a></li>
+        <li><a href="#les-50-mots-du-code-de-la-déontologie-de-la-police-nationale">Les 50 mots du code de la déontologie de la police nationale</a></li>
+        <li><a href="#les-50-mots-du-code-du-domaine-public-fluvial">Les 50 mots du code du domaine public fluvial </a></li>
+        <li><a href="#les-50-mots-du-code-de-la-santé-publique">Les 50 mots du code de la santé publique</a></li>
+        <li><a href="#chronométrage-du-programme-séquentiel">Chronométrage du programme séquentiel</a></li>
+        <li><a href="#travailler-sur-des-plus-gros-fichiers">Travailler sur des plus gros fichiers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Etape 1</h1>
+
+          <div class="article-style">
+            <h2 id="faire-un-programme-séquentiel-non-parallélisé-qui-compte-le-nombre-doccurrences-des-mots-dans-un-fichier">Faire un programme séquentiel non parallélisé qui compte le nombre d'occurrences des mots dans un fichier.</h2>
+<h3 id="prérequis-et-documentation">Prérequis et documentation</h3>
+<ul>
+<li>
+<p>programmer en Java<br>
+<a href="https://perso.telecom-paristech.fr/bellot/CoursJava/">https://perso.telecom-paristech.fr/bellot/CoursJava/</a></p>
+</li>
+<li>
+<p>manipuler l&rsquo;environnement de développement Eclipse<br>
+<a href="https://perso.telecom-paristech.fr/bellot/CoursJava/tps/">https://perso.telecom-paristech.fr/bellot/CoursJava/tps/</a></p>
+</li>
+<li>
+<p>lire et écrire dans un fichier en java<br>
+<a href="https://perso.telecom-paristech.fr/bellot/CoursJava/JavaIO.html">https://perso.telecom-paristech.fr/bellot/CoursJava/JavaIO.html</a></p>
+</li>
+</ul>
+<h3 id="premier-comptage-en-séquentiel-pur">Premier comptage en séquentiel pur</h3>
+<p>Implémentez un logiciel en java qui compte le nombre d&rsquo;occurrences des mots d&rsquo;un fichier d&rsquo;entrée de manière non parallélisée (monothread, une seul thread), en utilisant un seul processeur.</p>
+<p>Quelle structure de donnée est la plus pertinente pour stocker les résultats: List, HashMap ou HashSet ou une autre ? Pour quelle raison ?</p>
+<p>Testez votre programme avec un fichier d&rsquo;entrée <em>input.txt</em> avec comme contenu:<br>
+<br>
+Deer Beer River<br>
+Car Car River<br>
+Deer Car Beer</p>
+<p>Résultat:</p>
+<p>Deer 2</p>
+<p>Beer 2</p>
+<p>River 2</p>
+<p>Car 3</p>
+<h3 id="premier-tri-en-séquentiel-pur">Premier tri en séquentiel pur</h3>
+<p>Modifiez votre programme pour trier par nombre d'occurrences:</p>
+<p>Résultat:</p>
+<p>Car 3</p>
+<p>Deer 2</p>
+<p>Beer 2</p>
+<p>River 2</p>
+<h3 id="deuxième-tri-alphabétique-en-séquentiel-pur">Deuxième tri alphabétique en séquentiel pur</h3>
+<p>Modifiez le programme pour trier alphabétiquement pour les mots à égalité du nombre d&rsquo;occurrences:</p>
+<p>Résultat:</p>
+<p>Car 3</p>
+<p>Beer 2</p>
+<p>Deer 2</p>
+<p>River 2</p>
+<h3 id="test-du-programme-séquentiel-sur-le-code-forestier-de-mayotte">Test du programme séquentiel sur le code forestier de Mayotte</h3>
+<p>Testez ensuite votre programme avec le code forestier de Mayotte disponible sur github <em>forestier_mayotte.txt</em> :<br>
+<a href="https://github.com/legifrance/Les-codes-en-vigueur">https://github.com/legifrance/Les-codes-en-vigueur</a></p>
+<p>Votre programme a-t-il fonctionné du premier coup ?</p>
+<p>Vérifiez en ouvrant le fichier texte qu&rsquo;il contient bien du texte et non du code HTML.</p>
+<p>Ne perdez pas de temps à corriger les éventuelles erreurs dues aux caractères spéciaux ou à des mots suspects ou illisibles (de toutes façons par la suite il y aura du chinois dans le texte). </p>
+<h3 id="les-50-mots-du-code-de-la-déontologie-de-la-police-nationale">Les 50 mots du code de la déontologie de la police nationale</h3>
+<p>Testez votre programme avec le code de déontologie de la police nationale disponible sur github <em>deontologie_police_nationale.txt</em> : <a href="https://github.com/legifrance/Les-codes-en-vigueur">https://github.com/legifrance/Les-codes-en-vigueur</a></p>
+<p>De même ne perdez pas de temps à filtrer les caractères spéciaux ou autres mots bizarres. Pourquoi ? Car nous travaillerons ensuite sur des textes en chinois, japonais, arabe et d&rsquo;autres langues. Si vous implémentez une étape de filtrage ici en français elle ne servira à rien par la suite. Quels sont les 5 premiers mots (qui ressemblent à des mots) parmi les 50 premiers de la liste triée résultat ? Gardez la réponse pour l&rsquo;intégrer au rapport.</p>
+<h3 id="les-50-mots-du-code-du-domaine-public-fluvial">Les 50 mots du code du domaine public fluvial </h3>
+<p>Testez votre programme avec le code du domaine public fluvial <em>domaine_public_fluvial.txt</em>.</p>
+<p>Quels sont les 5 premiers mots (qui ressemblent à des mots) parmi les 50 premiers de la liste triée résultat ? Gardez la réponse pour l&rsquo;intégrer au rapport.</p>
+<h3 id="les-50-mots-du-code-de-la-santé-publique">Les 50 mots du code de la santé publique</h3>
+<p>Testez votre programme avec le code de la santé publique <em>sante_publique.txt</em>.</p>
+<p>Quels sont les 5 premiers mots (qui ressemblent à des mots) parmi les 50 premiers de la liste triée résultat ? Gardez la réponse pour l&rsquo;intégrer au rapport.</p>
+<h3 id="chronométrage-du-programme-séquentiel">Chronométrage du programme séquentiel</h3>
+<p>Chronométrer votre programme sur le code de la santé publique.</p>
+<p>Chronométrage possible avec:<br>
+long startTime = System.currentTimeMillis();<br>
+...<br>
+long endTime   = System.currentTimeMillis();<br>
+long totalTime = endTime - startTime;</p>
+<p>Combien de temps faut-il pour chacune des étapes:</p>
+<ul>
+<li>
+<p>Compter le nombre d&rsquo;occurrences</p>
+</li>
+<li>
+<p>Tri (par nombre d'occurrences et alphabétique)</p>
+</li>
+</ul>
+<p>Gardez la réponse pour l&rsquo;intégrer au rapport.</p>
+<h3 id="travailler-sur-des-plus-gros-fichiers">Travailler sur des plus gros fichiers</h3>
+<p>Testez votre programme sur un cas réel: un extrait de toutes les pages internet transformées au format texte brut (format WET). Toutes les pages sur  internet au format texte sont disponibles sur <a href="http://commoncrawl.org/the-data/get-started/">http://commoncrawl.org/the-data/get-started/</a> : chaque mois, environ 3 milliards de pages web, soit 250 To de données sont stockées. Ces données sont disponibles par tranche de moins d'1Go environ, vous travaillerez sur une tranche de 380Mo.</p>
+<p>J&rsquo;ai choisi une tranche en particulier pour avoir une comparaison entre nous (vous pouvez tester sur d&rsquo;autres tranches si vous voulez). Téléchargez cette tranche ici:</p>
+<p><a href="https://commoncrawl.s3.amazonaws.com/crawl-data/CC-MAIN-2017-13/segments/1490218189495.77/wet/CC-MAIN-20170322212949-00140-ip-10-233-31-227.ec2.internal.warc.wet.gz">https://commoncrawl.s3.amazonaws.com/crawl-data/CC-MAIN-2017-13/segments/1490218189495.77/wet/CC-MAIN-20170322212949-00140-ip-10-233-31-227.ec2.internal.warc.wet.gz</a> </p>
+<p>Décompressez et obtenez le fichier CC-MAIN-20170322212949-00140-ip-10-233-31-227.ec2.internal.warc.wet </p>
+<p>Il s&rsquo;agit d&rsquo;une tranche contenant un ensemble de sites internet au format texte brut (WET).</p>
+<p>Testez votre programme avec ce fichier en entrée. Chronométrez-le.</p>
+<p>Gardez la réponse pour l&rsquo;intégrer au rapport.</p>
+<p>Si vous avez un erreur du type java.lang.OutOfMemoryError vous devez augmenter la taille mémoire de la machine virtuelle Java. Pour cela, sous Eclipse, suivez ce tutoriel: 
+<a href="http://www.planetofbits.com/eclipse/increase-jvm-heap-size-in-eclipse/" target="_blank" rel="noopener">http://www.planetofbits.com/eclipse/increase-jvm-heap-size-in-eclipse/</a> . Par la suite, en ligne de commande, vous devrez ajouter l&rsquo;option -Xms avec la valeur qui convient pour toutes les commandes java. Par exemple, java -Xms1000m pour avoir 1000Mo de mémoire alloués pour cette commande java.</p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/courses/simple-hadoop-mapreduce-from-scratch/etape2/" rel="prev">Etape 2</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on 5 May 2019</p>
+
+          
+
+
+
+
+
+  
+  
+
+<p class="edit-page">
+  <a href="https://github.com/remisharrock/academic-kickstart/edit/dev/content/courses/simple-hadoop-mapreduce-from-scratch/etape1/index.md">
+    <i class="fas fa-pen pr-2"></i>Edit this page
+  </a>
+</p>
+
+
+
+
+          
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/c.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
