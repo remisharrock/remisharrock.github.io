@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Rémi Sharrock academic page</title>
+    <link>https://remisharrock.fr/project/</link>
+      <atom:link href="https://remisharrock.fr/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 28 Apr 2020 16:50:34 +0200</lastBuildDate>
+    <image>
+      <url>https://remisharrock.fr/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Projects</title>
+      <link>https://remisharrock.fr/project/</link>
+    </image>
+    
+    <item>
+      <title>Codecast</title>
+      <link>https://remisharrock.fr/project/codecast/</link>
+      <pubDate>Tue, 28 Apr 2020 16:50:34 +0200</pubDate>
+      <guid>https://remisharrock.fr/project/codecast/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-innovative-tools-implemented-in-moocs-to-enhance-teaching-and-learning-of-c-programming-with-linux&#34;&gt;3 innovative tools implemented in MOOCs to enhance teaching and learning of C programming with Linux:&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#codecast&#34;&gt;Codecast&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#taskgrader&#34;&gt;Taskgrader&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#weblinux&#34;&gt;WebLinux&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#some-of-my-use-cases&#34;&gt;Some of my use cases&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#demos-in-conferences&#34;&gt;Demos in conferences&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#project-contributors&#34;&gt;Project contributors&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#project-made-by&#34;&gt;Project made by&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#with-the-support-of&#34;&gt;With the support of&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h1 id=&#34;how-to-make-early-beginners-learning-programming-easier&#34;&gt;How to make early beginners learning programming easier?&lt;/h1&gt;
+&lt;p&gt;The goal for our international team is to enhance learning with in-browser open-source coding tools, providing easy onboarding and a rich learning experience for learners. Using a variety of tools, we aim to facilitate active learning style computer science teaching and learning. We began with the assumption that it is impossible to learn how to program with multiple choice assessments. Thus, we designed tools and assessments that allow students to learn by programming, via interactive and intuitive tools.&lt;/p&gt;
+&lt;h2 id=&#34;3-innovative-tools-implemented-in-moocs-to-enhance-teaching-and-learning-of-c-programming-with-linux&#34;&gt;3 innovative tools implemented in MOOCs to enhance teaching and learning of C programming with Linux:&lt;/h2&gt;
+&lt;h3 id=&#34;codecast&#34;&gt;Codecast&lt;/h3&gt;
+&lt;p&gt;How to overcome the barrier that a programming screencast video tutorial is not interactive? How to better teach and explain to learners basics of computer programming such as pointers, memory allocation or matrices in an online environment at large scale?&lt;/p&gt;
+&lt;p&gt;Any CS educator has to explain sooner or later a portion of code or a structured text to learners. The Codecast tool has been specially designed by CS educators and developed for MOOCs to replace non-interactive screencasts.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://codecast.wp.imt.fr/files/2017/04/cropped-cropped-codecast9-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;taskgrader&#34;&gt;Taskgrader&lt;/h3&gt;
+&lt;p&gt;Taskgrader is an automated grader to assess code submissions at scale, providing customized feedback, embedded in the platform with LTI. In these courses, we developed tasks within the Taskgrader platform to provide hands-on coding challenges in which learners apply knowledge presented in the codecasts by the instructor. The learner writes and submits a program and then receives detailed feedback and a score within seconds. To promote mastery learning, students can request hints and receive unlimited attempts. Learners can edit and resubmit until they complete the task. This setup is made to support motivation and learner engagement.&lt;/p&gt;
+&lt;h3 id=&#34;weblinux&#34;&gt;WebLinux&lt;/h3&gt;
+&lt;p&gt;Teaching Linux in an online environment brings challenges. One of them is to provide a easy onboarding experience for learners. How to make Linux available easily to users who might not be able to download large files on their own device or be skilled enough to install a Linux OS on their own device? The Weblinux tool provides a Linux OS fully in the browser and solves the inconvenient problem  of having to install an ISO disc image or provide access to a virtual machine.&lt;/p&gt;
+&lt;h2 id=&#34;some-of-my-use-cases&#34;&gt;Some of my use cases&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.imt.fr/en/education/mooc/mooc-thematic-courses/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2 MOOC offered on FUN-MOOC, French national Open edX instance.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.edx.org/professional-certificate/dartmouth-imtx-c-programming-with-linux&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;7 MOOC offered on edX.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;demos-in-conferences&#34;&gt;Demos in conferences&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://dl.acm.org/citation.cfm?id=3053970&amp;amp;CFID=749625375&amp;amp;CFTOKEN=11921258&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo paper presented at the Learning@Scale conference&lt;/a&gt;,
+Forth annual SCM Conference, April 2017, MIT, Cambridge.  // 
+&lt;a href=&#34;https://codecast.wp.imt.fr/files/2017/04/Poster-LAS-IMT-HAMONIC-SHARROCK3.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Poster presentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://dl.acm.org/citation.cfm?doid=3159450.3162381&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Workshop organized at the SIGCSE &amp;lsquo;18 conference, 49th ACM Technical Symposium on Computer Science Education, February 2018, Baltimore.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Demo presentation at the OpenedX Conference, May 2018, UMontreal.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://dl.acm.org/citation.cfm?doid=3231644.3231703&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo paper presented at Learning@Scale conference, Fifth Annual ACM Conference on Learning at Scale, June 2018,    London &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project-contributors&#34;&gt;Project contributors&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://remisharrock.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rémi Sharrock (Télécom ParisTech)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.linkedin.com/in/mathias-hiron-92a4303/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mathias Hiron (France IOI)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Sébastien Carlier (Epixode)&lt;/li&gt;
+&lt;li&gt;Michel Blockelet (France ioi)&lt;/li&gt;
+&lt;li&gt;Elie Roux (France ioi)&lt;/li&gt;
+&lt;li&gt;Lawrence Angrave (University of Illinois at Urbana-Champaign)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.linkedin.com/in/ellahamonic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ella Hamonic&lt;/a&gt; (Independent researcher)&lt;/li&gt;
+&lt;li&gt;Baptiste Gaultier (IMT Atlantique)&lt;/li&gt;
+&lt;li&gt;Petra Bonfert-Taylor (Dartmouth College)&lt;/li&gt;
+&lt;li&gt;Michael Goudzwaard (Dartmouth College)&lt;/li&gt;
+&lt;li&gt;Chris Miller (Dartmouth College)&lt;/li&gt;
+&lt;li&gt;Gérard Memmi (Télécom ParisTech)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project-made-by&#34;&gt;Project made by&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.imt.fr/en/training/mooc/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://codecast.wp.imt.fr/files/2017/04/IMT_logo_RVB-1-300x157.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;
+
+&lt;a href=&#34;http://www.telecom-paristech.fr/eng&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://codecast.wp.imt.fr/files/2017/04/logotelecom_0-300x300.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;
+
+&lt;a href=&#34;http://www.france-ioi.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://codecast.wp.imt.fr/files/2017/04/France-ioi-LogoOK-grand-300x167.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;with-the-support-of&#34;&gt;With the support of&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://codecast.wp.imt.fr/files/2017/04/fd-300x240.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

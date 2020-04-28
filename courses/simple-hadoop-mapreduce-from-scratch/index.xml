@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Travaux pratiques - implémentation de Hadoop MapReduce &#34;from scratch&#34; en Java. | Remi Sharrock academic page</title>
+    <title>Travaux pratiques - implémentation de Hadoop MapReduce &#34;from scratch&#34; en Java. | Rémi Sharrock academic page</title>
     <link>https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/</link>
       <atom:link href="https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/index.xml" rel="self" type="application/rss+xml" />
     <description>Travaux pratiques - implémentation de Hadoop MapReduce &#34;from scratch&#34; en Java.</description>
@@ -279,7 +279,7 @@ Are you sure you want to continue connecting (yes/no)? yes&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;utiliser le processBuilder en java&lt;br&gt;
-**&lt;a href=&#34;http://docs.oracle.com/javase/7/docs/api/java/lang/ProcessBuilder.html&#34;&gt;http://docs.oracle.com/javase/7/docs/api/java/lang/ProcessBuilder.html&lt;/a&gt; . **&lt;/p&gt;
+&lt;a href=&#34;http://docs.oracle.com/javase/7/docs/api/java/lang/ProcessBuilder.html&#34;&gt;http://docs.oracle.com/javase/7/docs/api/java/lang/ProcessBuilder.html&lt;/a&gt; .&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;lancer un exécutable (ou une commande) en ligne de commande depuis un programme écrit en java&lt;/p&gt;
@@ -492,7 +492,8 @@ River 1&lt;/p&gt;
 &lt;p&gt;Le nom du fichier sera donné comme argument args du main:&lt;br&gt;
 public static void main (String[] args)&lt;/p&gt;
 &lt;p&gt;Attention: si le fichier &amp;lt;hash&amp;gt;-&amp;lt;hostname&amp;gt;.txt existe déjà, il ne faut pas l&amp;rsquo;écraser mais plutôt continuer d&amp;rsquo;écrire dedans.&lt;/p&gt;
-&lt;p&gt;Ce nom de fichier correspond au hash, obtenu grâce à la fonction de hashage de la classe String, explications ici &lt;a href=&#34;https://fr.wikipedia.org/wiki/Java_hashCode()#La_fonction_de_hachage_de_la_classe_java.lang.String&#34;&gt;https://fr.wikipedia.org/wiki/Java_hashCode()#La_fonction_de_hachage_de_la_classe_java.lang.String&lt;/a&gt; , calculé à partir de la clé; Le nom de la machine, lui, est obtenu grâce à l&amp;rsquo;instruction java suivante: java.net.InetAddress.getLocalHost().getHostName()&lt;/p&gt;
+&lt;p&gt;Ce nom de fichier correspond au hash, obtenu grâce à la fonction de hashage de la classe String, explications ici 
+&lt;a href=&#34;https://fr.wikipedia.org/wiki/Java_hashCode%28%29#La_fonction_de_hachage_de_la_classe_java.lang.String&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fonction de hachage de la classe java.lang.String&lt;/a&gt; , calculé à partir de la clé; Le nom de la machine, lui, est obtenu grâce à l&amp;rsquo;instruction java suivante: java.net.InetAddress.getLocalHost().getHostName()&lt;/p&gt;
 &lt;p&gt;Pour cela, votre SLAVE prend un mode de fonctionnement en argument: 1 , qui correspond au calcul du hash , puis un nom de fichier &amp;ldquo;UMx.txt&amp;rdquo; en entrée depuis le dossier maps et calcule un fichier &amp;ldquo;&amp;lt;hash&amp;gt;-&amp;lt;hostname&amp;gt;.txt &amp;quot; en sortie dans le dossier shuffles. Gardez le mode précédent: 0 pour la phase de map.&lt;/p&gt;
 &lt;p&gt;Testez le fonctionnement de votre SLAVE avec le fichier UM1.txt contenant&lt;br&gt;
 Car 1&lt;br&gt;
@@ -533,7 +534,6 @@ Car 1&lt;/p&gt;
 River 1&lt;/p&gt;
 &lt;p&gt;Normalement, le fichier 67508-c127-12.txt doit être copié dans la machine numéro 2 (67508 modulo 3 = 2) &lt;strong&gt;dans le dossier shufflesreceived&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;et le fichier 78973420-c127-12.txt doit être copié dans la machine numéro 1 (78973420 modulo 3 = 1) &lt;strong&gt;dans le dossier shufflesreceived&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
 &lt;p&gt;Comme votre SLAVE est modifié, utilisez le DEPLOY pour déployer la nouvelle version.&lt;/p&gt;
 &lt;h3 id=&#34;un-master-qui-lance-et-attend-la-fin-de-la-phase-de-shuffle&#34;&gt;Un MASTER qui lance et attend la fin de la phase de shuffle.&lt;/h3&gt;
 &lt;p&gt;Modifiez le MASTER pour qu&amp;rsquo;il lance la phase de shuffle une fois que la phase de map est terminée, sur plusieurs machines et affiche &amp;ldquo;SHUFFLE FINISHED&amp;rdquo;. Pour cela vous utiliserez le fichier précédemment créé qui contient la liste des machines que vous voulez utiliser pour votre projet.&lt;/p&gt;

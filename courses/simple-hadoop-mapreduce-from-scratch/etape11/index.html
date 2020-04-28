@@ -238,9 +238,9 @@
   <meta property="twitter:site" content="@remisharrock">
   <meta property="twitter:creator" content="@remisharrock">
   
-  <meta property="og:site_name" content="Remi Sharrock academic page">
+  <meta property="og:site_name" content="Rémi Sharrock academic page">
   <meta property="og:url" content="https://remisharrock.fr/courses/simple-hadoop-mapreduce-from-scratch/etape11/">
-  <meta property="og:title" content="Etape 11 | Remi Sharrock academic page">
+  <meta property="og:title" content="Etape 11 | Rémi Sharrock academic page">
   <meta property="og:description" content="MapReduce - SHUFFLE Le MASTER qui prépare les SLAVE à la phase de shuffle. Modifiez le MASTER pour qu&rsquo;il envoie le fichier précédemment créé qui contient la liste des machines que vous voulez utiliser pour votre projet à tous les SLAVES utilisés pour la phase de map."><meta property="og:image" content="https://remisharrock.fr/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://remisharrock.fr/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
@@ -266,7 +266,7 @@
 
 
 
-  <title>Etape 11 | Remi Sharrock academic page</title>
+  <title>Etape 11 | Rémi Sharrock academic page</title>
 
 </head>
 
@@ -317,7 +317,7 @@
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Remi Sharrock academic page</a>
+      <a class="navbar-brand" href="/">Rémi Sharrock academic page</a>
     </div>
     
 
@@ -330,7 +330,7 @@
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Remi Sharrock academic page</a>
+      <a class="navbar-brand" href="/">Rémi Sharrock academic page</a>
     </div>
     
 
@@ -699,7 +699,8 @@
 <p>Le nom du fichier sera donné comme argument args du main:<br>
 public static void main (String[] args)</p>
 <p>Attention: si le fichier &lt;hash&gt;-&lt;hostname&gt;.txt existe déjà, il ne faut pas l&rsquo;écraser mais plutôt continuer d&rsquo;écrire dedans.</p>
-<p>Ce nom de fichier correspond au hash, obtenu grâce à la fonction de hashage de la classe String, explications ici <a href="https://fr.wikipedia.org/wiki/Java_hashCode()#La_fonction_de_hachage_de_la_classe_java.lang.String">https://fr.wikipedia.org/wiki/Java_hashCode()#La_fonction_de_hachage_de_la_classe_java.lang.String</a> , calculé à partir de la clé; Le nom de la machine, lui, est obtenu grâce à l&rsquo;instruction java suivante: java.net.InetAddress.getLocalHost().getHostName()</p>
+<p>Ce nom de fichier correspond au hash, obtenu grâce à la fonction de hashage de la classe String, explications ici 
+<a href="https://fr.wikipedia.org/wiki/Java_hashCode%28%29#La_fonction_de_hachage_de_la_classe_java.lang.String" target="_blank" rel="noopener">fonction de hachage de la classe java.lang.String</a> , calculé à partir de la clé; Le nom de la machine, lui, est obtenu grâce à l&rsquo;instruction java suivante: java.net.InetAddress.getLocalHost().getHostName()</p>
 <p>Pour cela, votre SLAVE prend un mode de fonctionnement en argument: 1 , qui correspond au calcul du hash , puis un nom de fichier &ldquo;UMx.txt&rdquo; en entrée depuis le dossier maps et calcule un fichier &ldquo;&lt;hash&gt;-&lt;hostname&gt;.txt &quot; en sortie dans le dossier shuffles. Gardez le mode précédent: 0 pour la phase de map.</p>
 <p>Testez le fonctionnement de votre SLAVE avec le fichier UM1.txt contenant<br>
 Car 1<br>
@@ -740,7 +741,6 @@ Car 1</p>
 River 1</p>
 <p>Normalement, le fichier 67508-c127-12.txt doit être copié dans la machine numéro 2 (67508 modulo 3 = 2) <strong>dans le dossier shufflesreceived</strong></p>
 <p>et le fichier 78973420-c127-12.txt doit être copié dans la machine numéro 1 (78973420 modulo 3 = 1) <strong>dans le dossier shufflesreceived</strong></p>
-<hr>
 <p>Comme votre SLAVE est modifié, utilisez le DEPLOY pour déployer la nouvelle version.</p>
 <h3 id="un-master-qui-lance-et-attend-la-fin-de-la-phase-de-shuffle">Un MASTER qui lance et attend la fin de la phase de shuffle.</h3>
 <p>Modifiez le MASTER pour qu&rsquo;il lance la phase de shuffle une fois que la phase de map est terminée, sur plusieurs machines et affiche &ldquo;SHUFFLE FINISHED&rdquo;. Pour cela vous utiliserez le fichier précédemment créé qui contient la liste des machines que vous voulez utiliser pour votre projet.</p>

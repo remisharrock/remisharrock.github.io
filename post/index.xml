@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts | Remi Sharrock academic page</title>
+    <title>Posts | Rémi Sharrock academic page</title>
     <link>https://remisharrock.fr/post/</link>
       <atom:link href="https://remisharrock.fr/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 26 Apr 2020 23:48:41 +0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 28 Apr 2020 01:22:51 +0200</lastBuildDate>
     <image>
       <url>https://remisharrock.fr/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>https://remisharrock.fr/post/</link>
     </image>
+    
+    <item>
+      <title>Search and replace using regex in Visual Studio Code</title>
+      <link>https://remisharrock.fr/post/regex-search-and-replace-visual-studio-code/</link>
+      <pubDate>Tue, 28 Apr 2020 01:22:51 +0200</pubDate>
+      <guid>https://remisharrock.fr/post/regex-search-and-replace-visual-studio-code/</guid>
+      <description>&lt;p&gt;Sometimes I convert HTML pages extracted from websites to Markdown using 
+&lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pandoc&lt;/a&gt;. Here is an example using this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pandoc -s -r html https://codecast.wp.imt.fr/ -o codecast.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The problem is that it often generates extra information following the pattern&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[interesting text that
+I want
+to keep]{uninteresting parameters extracted from HTML that I want to delete}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Any CS educator has to explain sooner or later a portion of code or a
+structured text to learners. The Codecast tool has been specially
+designed by CS educators and developed for MOOCs to replace
+non-interactive screencasts.]{style=&amp;quot;font-weight: 400&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I found an easy way to clean the Markdown using Visual Studio Code &amp;ldquo;find and replace&amp;rdquo; feature with regex. Here is the regular expression that I used:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;^\[([\s\S\r]*?)\]\{.*\} 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;^&lt;/code&gt; means beginning of a line. If you want to find this pattern in the middle of lines, just delete it.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;\[       \]&lt;/code&gt; means that I want to search something between squared brackets.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;[\s\S\r]&lt;/code&gt; means a &lt;em&gt;whitespace&lt;/em&gt; character &lt;code&gt;\s&lt;/code&gt; (space, tab&amp;hellip;) OR a character that is &lt;em&gt;not a whitespace&lt;/em&gt; &lt;code&gt;\S&lt;/code&gt; (a,b,c&amp;hellip;) OR a new line character &lt;code&gt;\r&lt;/code&gt;. Note that in Visual Studio Code regex system, the &lt;code&gt;\s&lt;/code&gt; does &lt;strong&gt;NOT&lt;/strong&gt; include the new line (even if I would think it&amp;rsquo;s a &lt;em&gt;whitespace&lt;/em&gt; character), that&amp;rsquo;s why I specifically add the &lt;code&gt;\r&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;(x*?)&lt;/code&gt;  - here &lt;code&gt;x&lt;/code&gt; is the expression just above - asks to capture a group using &lt;code&gt;(&lt;/code&gt; and &lt;code&gt;)&lt;/code&gt; , with the character &lt;code&gt;x&lt;/code&gt; appearing zero or more times with &lt;code&gt;*&lt;/code&gt; and once or none with &lt;code&gt;?&lt;/code&gt;. Maybe you are lost at this point! Anyway, because we asked for a capture, we will be able to use &lt;code&gt;$1&lt;/code&gt; as a variable containing the captured text!&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;\{.*\}&lt;/code&gt; means curly braces with something inside - Here I could also use  &lt;code&gt;[\s\S\r]&lt;/code&gt; instead of  &lt;code&gt;.*&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Anyway, I then replace with &lt;code&gt;$1&lt;/code&gt; and here is the result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./giftest.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Starting My (New) Academic Page</title>
