@@ -718,7 +718,7 @@ non-interactive screencasts.]{style=&quot;font-weight: 400&quot;}
 <p>The <code>[\s\S\r]</code> means a <em>whitespace</em> character <code>\s</code> (space, tab&hellip;) OR a character that is <em>not a whitespace</em> <code>\S</code> (a,b,c&hellip;) OR a new line character <code>\r</code>. Note that in Visual Studio Code regex system, the <code>\s</code> does <strong>NOT</strong> include the new line (even if I would think it&rsquo;s a <em>whitespace</em> character), that&rsquo;s why I specifically add the <code>\r</code>.</p>
 <p>The <code>(x*?)</code>  - here <code>x</code> is the expression just above - asks to capture a group using <code>(</code> and <code>)</code> , with the character <code>x</code> appearing zero or more times with <code>*</code> and once or none with <code>?</code>. Maybe you are lost at this point! Anyway, because we asked for a capture, we will be able to use <code>$1</code> as a variable containing the captured text!</p>
 <p>The <code>\{.*\}</code> means curly braces with something inside - Here I could also use  <code>[\s\S\r]</code> instead of  <code>.*</code></p>
-<p>Anyway, I then replace with <code>$1</code> and here is the result:</p>
+<p>Anyway, I then replace with <code>$1</code> and here is the result, enjoy !</p>
 <p><img src="./giftest.gif" alt=""></p>
 
     </div>

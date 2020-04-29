@@ -40,7 +40,7 @@ non-interactive screencasts.]{style=&amp;quot;font-weight: 400&amp;quot;}
 &lt;p&gt;The &lt;code&gt;[\s\S\r]&lt;/code&gt; means a &lt;em&gt;whitespace&lt;/em&gt; character &lt;code&gt;\s&lt;/code&gt; (space, tab&amp;hellip;) OR a character that is &lt;em&gt;not a whitespace&lt;/em&gt; &lt;code&gt;\S&lt;/code&gt; (a,b,c&amp;hellip;) OR a new line character &lt;code&gt;\r&lt;/code&gt;. Note that in Visual Studio Code regex system, the &lt;code&gt;\s&lt;/code&gt; does &lt;strong&gt;NOT&lt;/strong&gt; include the new line (even if I would think it&amp;rsquo;s a &lt;em&gt;whitespace&lt;/em&gt; character), that&amp;rsquo;s why I specifically add the &lt;code&gt;\r&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;(x*?)&lt;/code&gt;  - here &lt;code&gt;x&lt;/code&gt; is the expression just above - asks to capture a group using &lt;code&gt;(&lt;/code&gt; and &lt;code&gt;)&lt;/code&gt; , with the character &lt;code&gt;x&lt;/code&gt; appearing zero or more times with &lt;code&gt;*&lt;/code&gt; and once or none with &lt;code&gt;?&lt;/code&gt;. Maybe you are lost at this point! Anyway, because we asked for a capture, we will be able to use &lt;code&gt;$1&lt;/code&gt; as a variable containing the captured text!&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;\{.*\}&lt;/code&gt; means curly braces with something inside - Here I could also use  &lt;code&gt;[\s\S\r]&lt;/code&gt; instead of  &lt;code&gt;.*&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Anyway, I then replace with &lt;code&gt;$1&lt;/code&gt; and here is the result:&lt;/p&gt;
+&lt;p&gt;Anyway, I then replace with &lt;code&gt;$1&lt;/code&gt; and here is the result, enjoy !&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./giftest.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
